@@ -1,5 +1,9 @@
+const model = require('./../models/todo');
+
 module.exports = {
     list: (req, res) => {
-        res.send('todos list endpoint');
+        console.log('here!');
+        const response = model.find();
+        res.send(response);
     }
 }
