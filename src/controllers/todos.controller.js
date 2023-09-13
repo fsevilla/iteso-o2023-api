@@ -3,7 +3,20 @@ const model = require('./../models/todo');
 module.exports = {
     list: (req, res) => {
         console.log('here!');
-        const response = model.find();
-        res.send(response);
+        model.find({}).then(response => {
+            res.send(response);
+        });
+    },
+    create: (req, res) => {
+        const todo = req.body;
+        const result = model.create(todo);
+        res.send(result);
     }
 }
+
+/**
+ * title
+ * description
+ * status ?new
+ * 
+ */

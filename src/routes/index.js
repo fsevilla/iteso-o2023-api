@@ -1,4 +1,5 @@
-const router = require('express').Router();
+const express = require('express');
+const router = express.Router();
 const path = require('path');
 
 const auth = require('./auth');
@@ -9,6 +10,7 @@ router.get('', (req, res) => {
     res.sendFile(url);
 });
 
+router.use('', express.json());
 router.use('', auth);
 router.use('/todos', todos);
 
