@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const path = require('path');
 
+const auth = require('./auth');
 const todos = require('./todos');
 
 router.get('', (req, res) => {
@@ -8,6 +9,7 @@ router.get('', (req, res) => {
     res.sendFile(url);
 });
 
+router.use('', auth);
 router.use('/todos', todos);
 
 module.exports = router;
