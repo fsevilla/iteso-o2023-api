@@ -7,17 +7,3 @@ const todoSchema = new Schema({
 });
 
 module.exports = model('tareas', todoSchema);
-
-// let todos = [];
-
-// module.exports = {
-//     find: () => {
-//         return todos;
-//     },
-//     create: (todo) => {
-//         todo.id = new Date().getTime();
-//         todo.createdAt = new Date().getTime();
-//         todos.push(todo);
-//         return todo;
-//     }
-// }

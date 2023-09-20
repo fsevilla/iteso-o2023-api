@@ -2,9 +2,10 @@ const model = require('./../models/todo');
 
 module.exports = {
     list: (req, res) => {
-        console.log('here!');
-        model.find({}).then(response => {
-            res.send(response);
+        model.find().lean().then(response => {
+            res.render('template', {
+                data: response
+            });
         });
     },
     create: (req, res) => {
